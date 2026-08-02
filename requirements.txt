@@ -1,0 +1,54 @@
+# ---------------------------
+# UI
+# ---------------------------
+streamlit>=1.36.0
+
+# ---------------------------
+# Audio ingestion
+# ---------------------------
+yt-dlp>=2024.8.6          # download audio from YouTube URLs
+pydub>=0.25.1              # audio format handling/conversion
+ffmpeg-python>=0.2.0       # ffmpeg wrapper (requires ffmpeg installed on system)
+
+# ---------------------------
+# Transcription (local Whisper)
+# ---------------------------
+openai-whisper>=20231117
+torch>=2.2.0                # required by whisper (CPU build; swap for CUDA build if using GPU)
+
+# ---------------------------
+# Hindi -> English translation
+# ---------------------------
+# Whisper's built-in translate task handles this in most cases.
+# Keep a fallback MT library in case you need standalone translation:
+transformers>=4.42.0
+sentencepiece>=0.2.0
+
+# ---------------------------
+# LangChain + Mistral (LCEL pipeline for summarization / action items)
+# ---------------------------
+langchain>=0.2.11
+langchain-core>=0.2.24
+langchain-community>=0.2.10
+langchain-mistralai>=0.1.11
+mistralai>=0.4.2
+
+# ---------------------------
+# RAG pipeline (chat with transcript)
+# ---------------------------
+chromadb>=0.5.5
+langchain-chroma>=0.1.2
+langchain-huggingface>=0.0.3
+sentence-transformers>=3.0.1
+
+# ---------------------------
+# Export (PDF / TXT)
+# ---------------------------
+fpdf2>=2.7.9
+
+# ---------------------------
+# Utilities
+# ---------------------------
+python-dotenv>=1.0.1
+tqdm>=4.66.4
+numpy>=1.26.4
